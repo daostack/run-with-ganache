@@ -64,6 +64,7 @@ new Promise((resolve, reject) => {
 }).then(() => {
     execSync(cmd, { stdio: 'inherit' })
 }).then(() => {
+    //need to increment ganache.pid because exec launches a shell and then runs the commands
     process.kill(ganache.pid+1)
     ganache.kill()
     process.exit()
